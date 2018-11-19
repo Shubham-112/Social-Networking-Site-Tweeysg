@@ -37,11 +37,19 @@
 						Tweeysg
 					</span>
 
-                <div class="wrap-input100 validate-input m-b-10" data-validate = "Name is required">
-                    <input class="input100" type="text" name="name" placeholder="Name">
+                <div class="wrap-input100 validate-input m-b-10" data-validate = "First Name is required">
+                    <input class="input100" type="text" name="first_name" placeholder="First Name">
                     <span class="focus-input100"></span>
                     <span class="symbol-input100">
-							<i class="fa fa-email"></i>
+							<i class="fa fa-user"></i>
+						</span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-10" data-validate = "Last Name is required">
+                    <input class="input100" type="text" name="last_name" placeholder="Last Name">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+							<i class="fa fa-user"></i>
 						</span>
                 </div>
 
