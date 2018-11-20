@@ -35,8 +35,7 @@
           <version>2.6</version>
       </dependency>
 
-
-      <dependency>
+    <dependency>
       <groupId>org.mindrot</groupId>
       <artifactId>jbcrypt</artifactId>
       <version>0.3m</version>

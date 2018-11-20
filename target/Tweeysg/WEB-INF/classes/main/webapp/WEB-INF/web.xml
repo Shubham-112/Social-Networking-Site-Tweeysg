@@ -3,6 +3,7 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+<<<<<<< HEAD
     <display-name>Archetype Created Web Application</display-name>
 
     <context-param>
@@ -13,4 +14,7 @@
         </param-value>
     </context-param>
 
+=======
+  <display-name>Archetype Created Web Application</display-name>
+>>>>>>> d870b8b53187ad1702bf3bfdd5e6380b2700fdbf
 </web-app>

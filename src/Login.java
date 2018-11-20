@@ -30,6 +30,7 @@ public class Login extends HttpServlet {
             pw.println("forwarding request");
             RequestDispatcher view = request.getRequestDispatcher("/dashboard");
             view.forward(request, response);
+            pw.println("Welcome user !!");
         }else{
             pw.println("Incorrect Credentials. Please try again !!");
         }
