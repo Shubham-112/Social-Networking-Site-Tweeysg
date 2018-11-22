@@ -60,4 +60,26 @@ public class UserDAO {
         return false;
 
     }
+
+    public static UserBean getUser(String email){
+        UserBean user = new UserBean();
+        try{
+            conn = ConnectionManager.getConnection();
+            String query = "SELECT * FROM user WHERE email='" + email + "'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                user.setId(rs.getInt("id"));
+                user.setEmail(rs.getString("email"));
+                user.setFirst_name(rs.getString("first_name"));
+                user.setLast_name(rs.getString("last_name"));
+                return user;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return user;
+
+    }
 }

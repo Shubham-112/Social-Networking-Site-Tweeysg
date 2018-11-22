@@ -1,6 +1,7 @@
 import Beans.UserBean;
 import DAOs.UserDAO;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +27,9 @@ public class Login extends HttpServlet {
         if(UserDAO.LoginCheck(user)){
             HttpSession session = request.getSession();
             session.setAttribute("user_email", email);
+            pw.println("forwarding request");
+            RequestDispatcher view = request.getRequestDispatcher("/dashboard");
+            view.forward(request, response);
             pw.println("Welcome user !!");
         }else{
             pw.println("Incorrect Credentials. Please try again !!");

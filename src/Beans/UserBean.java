@@ -1,6 +1,7 @@
 package Beans;
 
 public class UserBean {
+    private int id;
     private String first_name;
     private String last_name;
     private String email;
@@ -36,5 +37,13 @@ public class UserBean {
 
     public void setFirst_name(String first_name) {
         this.first_name = first_name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
