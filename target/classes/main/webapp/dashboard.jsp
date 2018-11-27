@@ -1,4 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="Beans.UserBean" %>
+<%@ page import="java.util.List" %>
+<%@ page import="Beans.PostBean" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -17,6 +20,17 @@
         <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Zilla+Slab" rel="stylesheet">
+
+        <style>
+            .like-btn{
+                width: 100%;
+                border: 1px solid #00bfff;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #0080ff;
+                color: #fff;
+            }
+        </style>
 
     </head>
     <body>
@@ -153,7 +167,7 @@
 -->                 <img height="44px" width="44px" src="src/resources/user_color.png" alt="<%= user.getFirst_name() %>">
                     <form action="post" method="post" enctype="multipart/form-data">
                         <div class="form-field">
-                            <textarea class="form-text" name="body" id="new-post" cols="30" placeholder="What's up !! Give way to your thoughts"></textarea>
+                            <textarea class="form-text" name="postBody" id="new-post" cols="30" placeholder="What's up !! Give way to your thoughts"></textarea>
                         </div>
                         <div class="clearfix"></div>
                         <div class="image-upload">
@@ -163,110 +177,151 @@
                             <input type="file" name="file-input" id="file-input">
                         </div>
                         <button type="submit" class="btn">Create Post</button>
-                        <input type="hidden" value="{{Session::token()}}" name="_token">
                     </form>
                 </div>
             </div>
 
             <section class=" posts">
-
-                @foreach($posts as $post)
-                    <?php $post_count = 0; ?>
-                    <article class="post" data-postid="{{$post->id}}">
-                        <div class="posted-head">
-                            <div class="posted-img">
-                                @if(Storage::disk('local')->has($post->user['first_name'].'-'.Auth::user()->id.'.jpg'))
-                                    <img height="44px" width="44px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">
-                                @else
-                                    <img height="44px" width="44px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">
-                                @endif
+            <% List<PostBean> posts = (List<PostBean>) session.getAttribute("posts");
+            for(PostBean post: posts){
+                %>
+                <article class="post" data-postid="<%=post.getId()%>">
+                    <div class="posted-head">
+                        <div class="posted-img">
+                            <img height="44px" width="44px" src="src/resources/user_color.png" alt="User">
+                        </div>
+                        <a href="{{route('user.profile', ['user'=>$post->user['id']])}}"><%=user.getFirst_name()%></a>
+                        <div class="clearfix"></div>
+                        <p><%=post.getDate()%></p>
+                    </div>
+                    <p class="posted-body"><%=post.getBody()%></p>
+                    <img src="<%=post.getLink()%>" class="post-image img-responsive">
+                    <div class="post-react">
+                        <div class="row" style="margin-top: 10px !important;">
+                            <div class="col-sm-4">
+                                <button class="like-btn">Like</button>
                             </div>
-                            <a href="{{route('user.profile', ['user'=>$post->user['id']])}}">{{$post->user['first_name']}}</a>
-                            <div class="clearfix"></div>
-                            <p>{{$post->created_at->format('F d Y - G:i')}}</p>
+                            <div class="col-sm-4">
+                                <button class="btn">Wow</button>
+                            </div>
+                            <div class="col-sm-4">
+                                <button class="btn">Love</button>
+                            </div>
                         </div>
-                        <p class="posted-body">{{ $post->body }}</p>
-<!--
-                        @if(Storage::disk('local')->has('post-'.$post->id.'-image.jpg'))
-                            <a class="posted-post-image" data-lightbox="image-{{$post->id}}" data-title="{{$post->body}}" href="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" alt="" class="img-responsive"><div class="contain"><img
-                                            src="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" class="post-image img-responsive" alt=""></div></a>
-                        @endif
--->
-                        <hr>
-                        <div class="post-react">
-<!--
-                            <p>
-                                <?php $id = Auth::user()->id; ?>
-                                <span>{{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'You': '' : ''}}</span>
-                                <span>
-                                            @if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()>0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? true: false: false)
-                                        and
-                                    @endif
-                                        </span>
-                                <span>
-                                    <span>
-                                                @if((\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count())>0)
-                                                    {{\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count()}}
-                                                @endif
-                                    </span>
-                                    <span>
-                                                @if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==1)
-                                                    person like this
-                                                @elseif(\App\Like::where('post_id', $post->id)->count()>1)
-                                                    other people like this
-                                                @elseif(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1 : false)
-                                                    like this
-                                                @endif
-                                            </span>
-                                </span>
-                            </p>
--->
-                        </div>
-                        <div class="interaction">
-<!--
-                            <a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'liked' : 'normal' : 'normal'}}"><img
-                                        src="{{URL::to('src/resources/if_like-01_186399.png')}}" alt=""> Like</a> |
-                            <a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==0? 'disliked': 'normal' : 'normal' }}"><img
-                                        src="{{URL::to('src/resources/if_dislike-01_186406 .png')}}" alt=""> Dislike</a>
-                            @if(Auth::user() == $post->user)
-                                |
-                                <a href="#" class="btn edit normal"><img src="{{URL::to('src/resources/if_edit_2199097.png')}}" alt=""> Edit</a> |
-                                <a href="{{route('post.delete', ['post_id' => $post->id])}}" class=" delete btn normal"><img
-                                            src="{{URL::to('src/resources/if_Bin_2202256 .png')}}" alt=""> Delete</a>
-                            @endif
--->
-                        </div>
-                        <div class="add-comment">
-                            <form method="post" action="{{route('comment.add')}}">
-                                <div class="comment-field">
-                                    <textarea name="comment" id="comment" cols="60" rows="3" placeholder="Type your comment here..."></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Comment</button>
-                                <input type="hidden" value="{{$post->id}}" name="post_id">
-                                <input type="hidden" value="{{Session::token()}}" name="_token">
-                            </form>
-                        </div>
-                        <div class="get-comments">
-                            <p>Comments</p>
-                            @foreach($comments as $comment)
-                                @if($comment->post_id == $post->id)
-                                    <div class="comment">
-                                        <div class="posted-comment-img">
-                                            @if(Storage::disk('local')->has($comment->user['first_name'].'-'.Auth::user()->id.'.jpg'))
-                                                <img height="38px" width="38px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">
-                                            @else
-                                                <img height="38px" width="38px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">
-                                            @endif
-                                        </div>
-                                        <h3>{{$comment->user['first_name']}}</h3>
-                                        <p>{{$comment->body}}</p>
-                                    </div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </article>
-                @endforeach
-            </section>
+                    </div>
+                </article>
+                <%
+            }
+                request.setAttribute("posts", posts);
+            %>
+
+            <%--<section class="posts">--%>
+                <%--<c:forEach items="${posts}" var="post">--%>
+                    <%--<h2><c:out value="${post.userId}"/></h2>--%>
+                <%--</c:forEach>--%>
+            <%--</section>--%>
+
+
+
+            <%--<section class=" posts">--%>
+
+                <%--@foreach($posts as $post)--%>
+                    <%--<?php $post_count = 0; ?>--%>
+                    <%--<article class="post" data-postid="{{$post->id}}">--%>
+                        <%--<div class="posted-head">--%>
+                            <%--<div class="posted-img">--%>
+                                <%--@if(Storage::disk('local')->has($post->user['first_name'].'-'.Auth::user()->id.'.jpg'))--%>
+                                    <%--<img height="44px" width="44px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">--%>
+                                <%--@else--%>
+                                    <%--<img height="44px" width="44px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">--%>
+                                <%--@endif--%>
+                            <%--</div>--%>
+                            <%--<a href="{{route('user.profile', ['user'=>$post->user['id']])}}">{{$post->user['first_name']}}</a>--%>
+                            <%--<div class="clearfix"></div>--%>
+                            <%--<p>{{$post->created_at->format('F d Y - G:i')}}</p>--%>
+                        <%--</div>--%>
+                        <%--<p class="posted-body">{{ $post->body }}</p>--%>
+<%--<!----%>
+                        <%--@if(Storage::disk('local')->has('post-'.$post->id.'-image.jpg'))--%>
+                            <%--<a class="posted-post-image" data-lightbox="image-{{$post->id}}" data-title="{{$post->body}}" href="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" alt="" class="img-responsive"><div class="contain"><img--%>
+                                            <%--src="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" class="post-image img-responsive" alt=""></div></a>--%>
+                        <%--@endif--%>
+<%---->--%>
+                        <%--<hr>--%>
+                        <%--<div class="post-react">--%>
+<%--<!----%>
+                            <%--<p>--%>
+                                <%--<?php $id = Auth::user()->id; ?>--%>
+                                <%--<span>{{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'You': '' : ''}}</span>--%>
+                                <%--<span>--%>
+                                            <%--@if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()>0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? true: false: false)--%>
+                                        <%--and--%>
+                                    <%--@endif--%>
+                                        <%--</span>--%>
+                                <%--<span>--%>
+                                    <%--<span>--%>
+                                                <%--@if((\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count())>0)--%>
+                                                    <%--{{\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count()}}--%>
+                                                <%--@endif--%>
+                                    <%--</span>--%>
+                                    <%--<span>--%>
+                                                <%--@if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==1)--%>
+                                                    <%--person like this--%>
+                                                <%--@elseif(\App\Like::where('post_id', $post->id)->count()>1)--%>
+                                                    <%--other people like this--%>
+                                                <%--@elseif(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1 : false)--%>
+                                                    <%--like this--%>
+                                                <%--@endif--%>
+                                            <%--</span>--%>
+                                <%--</span>--%>
+                            <%--</p>--%>
+<%---->--%>
+                        <%--</div>--%>
+                        <%--<div class="interaction">--%>
+<%--<!----%>
+                            <%--<a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'liked' : 'normal' : 'normal'}}"><img--%>
+                                        <%--src="{{URL::to('src/resources/if_like-01_186399.png')}}" alt=""> Like</a> |--%>
+                            <%--<a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==0? 'disliked': 'normal' : 'normal' }}"><img--%>
+                                        <%--src="{{URL::to('src/resources/if_dislike-01_186406 .png')}}" alt=""> Dislike</a>--%>
+                            <%--@if(Auth::user() == $post->user)--%>
+                                <%--|--%>
+                                <%--<a href="#" class="btn edit normal"><img src="{{URL::to('src/resources/if_edit_2199097.png')}}" alt=""> Edit</a> |--%>
+                                <%--<a href="{{route('post.delete', ['post_id' => $post->id])}}" class=" delete btn normal"><img--%>
+                                            <%--src="{{URL::to('src/resources/if_Bin_2202256 .png')}}" alt=""> Delete</a>--%>
+                            <%--@endif--%>
+<%---->--%>
+                        <%--</div>--%>
+                        <%--<div class="add-comment">--%>
+                            <%--<form method="post" action="{{route('comment.add')}}">--%>
+                                <%--<div class="comment-field">--%>
+                                    <%--<textarea name="comment" id="comment" cols="60" rows="3" placeholder="Type your comment here..."></textarea>--%>
+                                <%--</div>--%>
+                                <%--<button type="submit" class="btn btn-primary">Comment</button>--%>
+                                <%--<input type="hidden" value="{{$post->id}}" name="post_id">--%>
+                                <%--<input type="hidden" value="{{Session::token()}}" name="_token">--%>
+                            <%--</form>--%>
+                        <%--</div>--%>
+                        <%--<div class="get-comments">--%>
+                            <%--<p>Comments</p>--%>
+                            <%--@foreach($comments as $comment)--%>
+                                <%--@if($comment->post_id == $post->id)--%>
+                                    <%--<div class="comment">--%>
+                                        <%--<div class="posted-comment-img">--%>
+                                            <%--@if(Storage::disk('local')->has($comment->user['first_name'].'-'.Auth::user()->id.'.jpg'))--%>
+                                                <%--<img height="38px" width="38px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">--%>
+                                            <%--@else--%>
+                                                <%--<img height="38px" width="38px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">--%>
+                                            <%--@endif--%>
+                                        <%--</div>--%>
+                                        <%--<h3>{{$comment->user['first_name']}}</h3>--%>
+                                        <%--<p>{{$comment->body}}</p>--%>
+                                    <%--</div>--%>
+                                <%--@endif--%>
+                            <%--@endforeach--%>
+                        <%--</div>--%>
+                    <%--</article>--%>
+                <%--@endforeach--%>
+            <%--</section>--%>
         </div>
         <div class="col-md-2"></div>
         <div id="online">

@@ -62,13 +62,14 @@ public class UserDAO {
     }
 
     public static UserBean getUser(String email){
-        UserBean user = new UserBean();
+        UserBean user = null;
         try{
             conn = ConnectionManager.getConnection();
             String query = "SELECT * FROM user WHERE email='" + email + "'";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             while(rs.next()){
+                user = new UserBean();
                 user.setId(rs.getInt("id"));
                 user.setEmail(rs.getString("email"));
                 user.setFirst_name(rs.getString("first_name"));
