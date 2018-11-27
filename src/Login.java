@@ -37,6 +37,8 @@ public class Login extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        PrintWriter pw = response.getWriter();
+        pw.println("hello");
+        request.getRequestDispatcher("WEB-INF/main.jsp").forward(request,response);
     }
 }

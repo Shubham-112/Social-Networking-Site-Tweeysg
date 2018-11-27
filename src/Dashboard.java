@@ -37,14 +37,13 @@ public class Dashboard extends HttpServlet {
 
         session.setAttribute("user", user);
         session.setAttribute("posts", posts);
-        request.getRequestDispatcher("dashboard.jsp").forward(request, response);
+        request.getRequestDispatcher("WEB-INF/dashboard.jsp").forward(request, response);
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        PrintWriter pw = response.getWriter();
-        pw.println("in get dashboard");
+        doPost(request, response);
 
     }
 }

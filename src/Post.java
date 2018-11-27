@@ -112,53 +112,6 @@ public class Post extends HttpServlet {
         }
 
 
-
-//        if(!isMultipart){
-//            pw.println("cannot upload !!");
-//        }else{
-//            File directory = new File(filePath + "\\" + user_id);
-//            directory.mkdir();
-//            pw.println("can upload");
-//            DiskFileItemFactory factory = new DiskFileItemFactory();
-//
-//            factory.setSizeThreshold(maxFileSize);
-//            factory.setRepository(new File("c:\\temp"));
-//
-//            ServletFileUpload upload = new ServletFileUpload(factory);
-//            upload.setFileSizeMax(maxFileSize);
-//
-//            try{
-//                List fileItems = upload.parseRequest(request);
-//                Iterator i = fileItems.iterator();
-//
-//                while(i.hasNext()){
-//                    FileItem fi = (FileItem)i.next();
-//                    if(!fi.isFormField()){
-//                        String fieldName = fi.getFieldName();
-//                        String fileName = fi.getName();
-//                        String contentType = fi.getContentType();
-//                        boolean isInMemory = fi.isInMemory();
-//                        long sizeInBytes = fi.getSize();
-//
-//                        if( fileName.lastIndexOf("\\") >= 0 ) {
-//                            file = new File( filePath + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"))) ;
-//                            path = filePath + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"));
-//                        } else {
-//                            file = new File( filePath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
-//                            path = filePath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1);
-//                        }
-//                        fi.write( file ) ;
-//                        pw.println("Uploaded Filename: <>" + fileName);
-//                    }
-//                }
-//
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//        }
-
-
-
         PostBean post = new PostBean();
         post.setUserId(user_id);
         post.setBody(body);
