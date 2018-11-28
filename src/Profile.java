@@ -1,6 +1,7 @@
 import Beans.PostBean;
 import Beans.UserBean;
 import DAOs.PostDAO;
+import DAOs.UserDAO;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -53,8 +54,11 @@ public class Profile extends HttpServlet {
         response.setContentType("text/html");
 
 
-        String body = "" ;
+        String cover = "" ;
+        String display = "";
         String path = "";
+        String first_name = "";
+        String last_name = "";
 
         try {
             List<FileItem> items = new ServletFileUpload(new DiskFileItemFactory()).parseRequest(request);
@@ -62,8 +66,10 @@ public class Profile extends HttpServlet {
                 if (item.isFormField()) {
                     String fieldName = item.getFieldName();
                     String fieldValue = item.getString();
-                    if(fieldName.equals("postBody")){
-                        body = fieldValue;
+                    if(fieldName.equals("first_name")){
+                        first_name = fieldValue;
+                    }else if(fieldName.equals("last_name")){
+                        last_name = fieldValue;
                     }
                 }else{
                     File directory = new File(absoluteDiskPath + "\\" + user_id);
@@ -83,15 +89,28 @@ public class Profile extends HttpServlet {
                     boolean isInMemory = item.isInMemory();
                     long sizeInBytes = item.getSize();
 
-                    if( fileName.lastIndexOf("\\") >= 0 ) {
-                        file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"))) ;
-                        path = relativeStore + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"));
-                    } else {
-                        file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
-                        path = relativeStore + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1);
+                    if(fieldName.equals("image")){
+                        if( fileName.lastIndexOf("\\") >= 0 ) {
+                            file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"))) ;
+                            display = relativeStore + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"));
+                        } else {
+                            file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+                            display = relativeStore + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1);
+                        }
+                        item.write( file ) ;
+                        pw.println("Uploaded Filename: <>" + fileName);
+                    }else if(fieldName.equals("cover")){
+                        if( fileName.lastIndexOf("\\") >= 0 ) {
+                            file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring( fileName.lastIndexOf("\\"))) ;
+                            cover = relativeWebPath + "/" + user_id + "/" + time + "-" + fileName.substring( fileName.lastIndexOf("/"));
+                        } else {
+                            file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
+                            cover = relativeWebPath + "/" + user_id + "/" + time + "-" + fileName.substring(fileName.lastIndexOf("/")+1);
+                        }
+                        item.write( file ) ;
+                        pw.println("Uploaded Filename: <>" + fileName);
                     }
-                    item.write( file ) ;
-                    pw.println("Uploaded Filename: <>" + fileName);
+
                 }
             }
         } catch (FileUploadException e) {
@@ -101,19 +120,23 @@ public class Profile extends HttpServlet {
         }
 
 
-        PostBean post = new PostBean();
-        post.setUserId(user_id);
-        post.setBody(body);
-        post.setLink(path);
+        pw.println(cover);
+        pw.println(display);
+        pw.println(first_name);
+        pw.println(last_name);
 
+        UserBean update_user = new UserBean();
+        update_user.setFirst_name(first_name);
+        update_user.setLast_name(last_name);
+        update_user.setDisplay(display);
+        update_user.setCover(cover);
 
-        if(PostDAO.AddPost(post)){
+        if(UserDAO.updateUser(update_user, user_id)){
             RequestDispatcher view = request.getRequestDispatcher("/dashboard");
             view.forward(request, response);
         }else{
-            pw.println("Could'nt upload. Please try again !!");
+            pw.println("Could'nt update. Please try again !!");
         }
-
 
     }
 

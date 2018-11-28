@@ -7,244 +7,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b87543f5-dd8c-45ad-a037-c05303c64bf3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Tweeysg.eml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Tweeysg.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Tweeysg.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Beans/PostBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Beans/UserBean.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Connection/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAOs/PostDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAOs/UserDAO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Dashboard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Post.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Register.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Utilities/HashPassword.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/dashboard.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/register.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/css/util.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/animated.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/font-awesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/path.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/screen-reader.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_animated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_path.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/font-awesome-4.7.0/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/Montserrat-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/montserrat/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/poppins/Poppins-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/OFL.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Black.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-BlackItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Bold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-BoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-ExtraBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-ExtraBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-ExtraLight.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-ExtraLightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Italic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Light.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-LightItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Medium.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-MediumItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Regular.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-SemiBold.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-SemiBoldItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-Thin.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/fonts/raleway/Raleway-ThinItalic.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/images/avatar-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/images/icons/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/images/icons/icon-google.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/images/img-01.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/images/logo_16424_hd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/animate/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/js/popper.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/js/popper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/bootstrap/js/tooltip.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/css-hamburgers/hamburgers.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/css-hamburgers/hamburgers.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/jquery/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/select2/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/select2/select2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/select2/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/resources/vendor/select2/select2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/message.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/profile.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme10.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme11.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme12.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme13.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme14.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme15.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme16.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme17.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme18.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme2.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme3.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme4.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme5.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme6.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme6_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme7.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme8.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/css/theme9.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/js/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/group1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/group2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/group3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/group4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_Bin_2202256 .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_Sed-03_2232587.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_Sed-16_2232599.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_dislike-01_186406 .png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_edit_2199097.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/if_like-01_186399.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/DEPLOY.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/Gruntfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/ROADMAP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/_editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/_gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/_jscsrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/_jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/bower.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/css/lightbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/css/lightbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox-plus-jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox-plus-jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox-plus-jquery.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/dist/js/lightbox.min.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/examples/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/css/lightbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/lightbox2-master/src/js/lightbox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/logo_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/logout_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/message.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/news.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/notifications.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/pen-post.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/post-album.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/post-cam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/post-location.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/post-video.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/search-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/settings_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/theme1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/user_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/webapp/src/resources/user_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Beans/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Beans/UserBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/DAOs/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DAOs/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/main/webapp/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/bin/main/webapp/WEB-INF/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/Beans/UserBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/Beans/UserBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/DAOs/UserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/DAOs/UserDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/Profile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/Profile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/main/webapp/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/classes/main/webapp/WEB-INF/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/WEB-INF/profile.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/src/resources/users/1/1543351876378-avatar-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Tweeysg_war_exploded/src/resources/users/1/1543351923425-avatar-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beans/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beans/UserBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOs/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOs/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,6 +35,36 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tweeysg@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tweeysg@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="tweeysg@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tweeysg: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1493038921">
@@ -263,28 +76,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="8" />
+          <entry key="java" value="16" />
           <entry key="jsp" value="5" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="8" />
+          <entry key="JAVA" value="16" />
           <entry key="JSP" value="5" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="141" />
-          <entry key="jsp" value="671" />
+          <entry key="java" value="1459" />
+          <entry key="jsp" value="1476" />
+          <entry key="txt" value="81" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="141" />
-          <entry key="JSP" value="671" />
+          <entry key="JAVA" value="1459" />
+          <entry key="JSP" value="1476" />
+          <entry key="PLAIN_TEXT" value="81" />
         </counts>
       </usages-collector>
     </session>
@@ -294,17 +109,79 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="173" column="50" lean-forward="true" selection-start-line="173" selection-start-column="50" selection-end-line="173" selection-end-column="50" />
+            <state relative-caret-position="-340">
+              <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Home.java">
+        <entry file="file://$PROJECT_DIR$/src/Profile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="265">
+              <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="82">
+              <caret line="51" column="49" lean-forward="true" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#3;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#3;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Logout.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Friend.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DAOs/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="112" column="83" lean-forward="true" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Login.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -315,59 +192,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Dashboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Post.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="35" column="23" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="35" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Profile.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="152" column="85" lean-forward="true" selection-start-line="152" selection-start-column="85" selection-end-line="152" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Connection/ConnectionManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="78" selection-start-line="17" selection-start-column="48" selection-end-line="17" selection-end-column="78" />
+            <state relative-caret-position="221">
+              <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -375,17 +201,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Beans/UserBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="279">
+              <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+              <folding>
+                <element signature="e#988#989#0" expanded="true" />
+                <element signature="e#1016#1017#0" expanded="true" />
+                <element signature="e#1058#1059#0" expanded="true" />
+                <element signature="e#1092#1093#0" expanded="true" />
+                <element signature="e#1126#1127#0" expanded="true" />
+                <element signature="e#1156#1157#0" expanded="true" />
+                <element signature="e#1202#1203#0" expanded="true" />
+                <element signature="e#1240#1241#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Message.jsp">
+        <entry file="file://$PROJECT_DIR$/src/Register.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
-              <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="-153">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -399,6 +235,14 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>twee</find>
+      <find>buddies</find>
+      <find>budd</find>
+      <find>tweeysg</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -407,14 +251,18 @@
       <list>
         <option value="$PROJECT_DIR$/src/Login.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/main.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
         <option value="$PROJECT_DIR$/src/Home.java" />
         <option value="$PROJECT_DIR$/src/Post.java" />
         <option value="$PROJECT_DIR$/src/Dashboard.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/Message.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp" />
+        <option value="$PROJECT_DIR$/src/Beans/UserBean.java" />
         <option value="$PROJECT_DIR$/src/Profile.java" />
+        <option value="$PROJECT_DIR$/src/Friend.java" />
+        <option value="$PROJECT_DIR$/src/DAOs/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/Logout.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp" />
       </list>
     </option>
   </component>
@@ -467,19 +315,14 @@
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Connection" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="test" type="b2602c69:ProjectViewProjectNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -491,7 +334,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543357732789" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543364896738" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -674,12 +517,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543348915148</updated>
-      <workItem from="1543348916342" duration="7669000" />
+      <workItem from="1543348916342" duration="14814000" />
     </task>
+    <task id="LOCAL-00001" summary="major changes to login flow, security, bug fixes and user profiles added.">
+      <created>1543357790378</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1543357790378</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7669000" />
+    <option name="totallyTimeSpent" value="14814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -690,8 +541,8 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
-      <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
+      <window_info id="Web" sideWeight="0.50208336" side_tool="true" visible="true" weight="0.24966443" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49791667" visible="true" weight="0.24966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Application Servers" weight="0.32867134" />
       <window_info anchor="bottom" id="Terminal" />
@@ -702,7 +553,7 @@
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32867134" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -710,7 +561,7 @@
       <window_info anchor="right" id="Palette" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="right" id="Database" visible="true" weight="0.093959734" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -724,21 +575,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="major changes to login flow, security, bug fixes and user profiles added." />
+    <option name="LAST_COMMIT_MESSAGE" value="major changes to login flow, security, bug fixes and user profiles added." />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/main.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="53" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,34 +594,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Home.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dashboard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/Message.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1248">
           <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Beans/UserBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -792,38 +613,126 @@
         <state relative-caret-position="-204" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp">
+    <entry file="file://$PROJECT_DIR$/src/DAOs/PostDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="173" column="50" lean-forward="true" selection-start-line="173" selection-start-column="50" selection-end-line="173" selection-end-column="50" />
+        <state relative-caret-position="-187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/Home.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="152" column="85" lean-forward="true" selection-start-line="152" selection-start-column="85" selection-end-line="152" selection-end-column="85" />
+        <state relative-caret-position="255">
+          <caret line="24" column="70" lean-forward="true" selection-start-line="24" selection-start-column="70" selection-end-line="24" selection-end-column="70" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Post.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="35" column="23" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="35" selection-end-column="23" />
+        <state relative-caret-position="-918">
+          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Register.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Beans/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="64" column="31" lean-forward="true" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
+          <folding>
+            <element signature="e#988#989#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+            <element signature="e#1058#1059#0" expanded="true" />
+            <element signature="e#1092#1093#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1156#1157#0" expanded="true" />
+            <element signature="e#1202#1203#0" expanded="true" />
+            <element signature="e#1240#1241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Friend.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOs/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="112" column="83" lean-forward="true" selection-start-line="112" selection-start-column="83" selection-end-line="112" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dashboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Profile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="265">
+          <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Logout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="29" lean-forward="true" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dashboard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-340">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="51" column="49" lean-forward="true" selection-start-line="51" selection-start-column="49" selection-end-line="51" selection-end-column="49" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#3;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

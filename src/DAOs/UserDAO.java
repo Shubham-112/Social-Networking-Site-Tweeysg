@@ -3,6 +3,8 @@ package DAOs;
 import Beans.UserBean;
 
 import java.sql.*;
+import java.text.SimpleDateFormat;
+
 import Connection.ConnectionManager;
 import Utilities.HashPassword;
 
@@ -74,6 +76,8 @@ public class UserDAO {
                 user.setEmail(rs.getString("email"));
                 user.setFirst_name(rs.getString("first_name"));
                 user.setLast_name(rs.getString("last_name"));
+                user.setCover(rs.getString("cover"));
+                user.setDisplay(rs.getString("display"));
                 return user;
             }
         }catch (SQLException e){
@@ -83,4 +87,48 @@ public class UserDAO {
         return user;
 
     }
+
+    public static boolean updateUser(UserBean user, int id){
+        try {
+            conn = ConnectionManager.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("UPDATE user SET first_name=?, last_name=?, cover=?, display=? WHERE id="+ id +"");
+            stmt.setString(1, user.getFirst_name());
+            stmt.setString(2, user.getLast_name());
+            stmt.setString(3, user.getCover());
+            stmt.setString(4, user.getDisplay());
+            int i = stmt.executeUpdate();
+            if(i>0){
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    public static boolean sendRequest(int reqTo, int user){
+        try{
+            conn = ConnectionManager.getConnection();
+            String query = "SELECT * FROM friendrequests WHERE requestBy=" + user + " AND requestTo=" + reqTo + "";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            if(!rs.next()){
+                PreparedStatement insstmt = conn.prepareStatement("INSERT INTO friendrequests(requestBy, requestTo, status) VALUE(?,?,?)");
+                insstmt.setInt(user, 1);
+                insstmt.setInt(reqTo, 2);
+                insstmt.setString(3,"pending");
+                int t = insstmt.executeUpdate();
+                if(t>0){
+                    return true;
+                }
+            }else{
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }

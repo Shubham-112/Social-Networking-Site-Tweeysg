@@ -6,6 +6,8 @@ public class UserBean {
     private String last_name;
     private String email;
     private String password;
+    private String cover;
+    private String display;
 
     public String getPassword() {
         return password;
@@ -45,5 +47,21 @@ public class UserBean {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getCover() {
+        return cover;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public String getDisplay() {
+        return display;
+    }
+
+    public void setDisplay(String display) {
+        this.display = display;
     }
 }

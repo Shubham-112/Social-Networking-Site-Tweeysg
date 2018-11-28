@@ -1,5 +1,8 @@
+<%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+<%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <%@ page import="Beans.UserBean" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Beans.PostBean" %>
@@ -46,7 +49,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="dashboard.jsp"><img src="../src/resources/logo_32.png" alt=""> <span>TWEEYSG</span></a>
+                        <a class="navbar-brand" href="/index.jsp"><img src="../src/resources/logo_32.png" alt=""> <span>TWEEYSG</span></a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,11 +65,12 @@
                                 </form>
                             </div>
                         </ul>
+                        <% UserBean user = (UserBean) session.getAttribute("user"); %>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
-                                <a href="{{route('account')}}" id="head-user">
+                                <a href="profile?id=<%=user.getId()%>" id="head-user">
                                     <img height="35px" width="35px" src="../src/resources/user_color.png" alt="{{Auth::user()->first_name}}">
-                                    <% UserBean user = (UserBean) session.getAttribute("user"); %>
+
                                     <%= user.getFirst_name() %>
 <!--
                                     @if(Auth::user())
@@ -95,7 +99,7 @@
 -->
                             </li>
                             <li id="logout-li">
-                                <a href="{{route('logout')}}"><img height="28px" width="28px" src="../src/resources/logout_32.png" alt=""></a>
+                                <a href="logout"><img height="28px" width="28px" src="../src/resources/logout_32.png" alt=""></a>
                                 <div class="logout-down">
                                     <a href="">Logout</a>
                                 </div>
@@ -111,7 +115,7 @@
         <div class="col-md-2" id="main-nav-back"></div>
         <div class="col-md-2" id="nav-user">
             <div id="main-nav">
-                <a class="item" href="{{route('account')}}" id="user">
+                <a class="item" href="profile?id=<%=user.getId()%>" id="user">
                     <img height="24px" width="24px" src="../src/resources/user.png" alt="<%= user.getFirst_name() %>">
 <!--
                     @if(Storage::disk('local')->has(Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'))
@@ -329,6 +333,24 @@
             <div class="col-md-3">
                 <h2>BUDDIES</h2>
                 <div class="users">
+                    <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                                       url = "jdbc:mysql://localhost/tweeysg"
+                                       user = "root"  password = "root"/>
+                    <c:set var = "count" scope = "page" value = "${0}"/>
+                    <sql:query dataSource = "${snapshot}" var = "request">
+                        SELECT * from friendrequests WHERE AND requestBy=<%=user.getId()%>;
+                    </sql:query>
+                    <c:forEach var = "row" items = "${request.rows}">
+                        <c:set var="count" value="${count + 1}" scope="page"/>
+                        <c:if test="${row.status == 'accepted'}">
+                            <sql:query dataSource = "${snapshot}" var = "result">
+                                SELECT * from user WHERE id=${row.requestTo};
+                            </sql:query>
+                            <c:forEach var = "us" items = "${result.rows}">
+                                <a href="profile/${row.requestTo}" class="btn">${us.first_name}</a>
+                            </c:forEach>
+                        </c:if>
+                    </c:forEach>
                     @foreach($users as $user)
                         @if(Auth::user() != $user)
                             <a href="{{route('user.profile', ['user'=>$user->id])}}" class="btn">{{$user->first_name}}</a>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="Maven: commons-fileupload:commons-fileupload:1.3.3">
+    <archive path="C:/Users/raml/.m2/repository/commons-fileupload/commons-fileupload/1.3.3/commons-fileupload-1.3.3.jar" />
+  </library>
+  <library name="Maven: commons-io:commons-io:2.6">
+    <archive path="C:/Users/raml/.m2/repository/commons-io/commons-io/2.6/commons-io-2.6.jar" />
+  </library>
+  <library name="Maven: javax.servlet:javax.servlet-api:4.0.1">
+    <archive path="C:/Users/raml/.m2/repository/javax/servlet/javax.servlet-api/4.0.1/javax.servlet-api-4.0.1.jar" />
+  </library>
+  <library name="Maven: javax.servlet:jstl:1.2">
+    <archive path="C:/Users/raml/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar" />
+  </library>
+  <library name="Maven: junit:junit:4.11">
+    <archive path="C:/Users/raml/.m2/repository/junit/junit/4.11/junit-4.11.jar" />
+  </library>
+  <library name="Maven: mysql:mysql-connector-java:5.1.46">
+    <archive path="C:/Users/raml/.m2/repository/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46.jar" />
+  </library>
+  <library name="Maven: org.hamcrest:hamcrest-core:1.3">
+    <archive path="C:/Users/raml/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+  </library>
+  <library name="Maven: org.mindrot:jbcrypt:0.3m">
+    <archive path="C:/Users/raml/.m2/repository/org/mindrot/jbcrypt/0.3m/jbcrypt-0.3m.jar" />
+  </library>
+</eclipse-userlibraries>
+

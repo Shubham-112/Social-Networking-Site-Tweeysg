@@ -3,6 +3,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+
 <%@ page import="Beans.UserBean" %>
 <%@ page import="java.util.List" %>
 <%@ page import="Beans.PostBean" %>
@@ -51,7 +52,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="dashboard.jsp"><img src="../src/resources/logo_32.png" alt=""> <span>TWEEYSG</span></a>
+                <a class="navbar-brand" href="/index.jsp"><img src="../src/resources/logo_32.png" alt=""> <span>TWEEYSG</span></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -67,11 +68,12 @@
                         </form>
                     </div>
                 </ul>
+                <% UserBean user = (UserBean) session.getAttribute("user"); %>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{route('account')}}" id="head-user">
+                        <a href="profile?id=<%=user.getId()%>" id="head-user">
                             <img height="35px" width="35px" src="../src/resources/user_color.png" alt="{{Auth::user()->first_name}}">
-                            <% UserBean user = (UserBean) session.getAttribute("user"); %>
+
                             <%= user.getFirst_name() %>
                             <!--
                                                                 @if(Auth::user())
@@ -100,7 +102,7 @@
                         -->
                     </li>
                     <li id="logout-li">
-                        <a href="{{route('logout')}}"><img height="28px" width="28px" src="../src/resources/logout_32.png" alt=""></a>
+                        <a href="logout"><img height="28px" width="28px" src="../src/resources/logout_32.png" alt=""></a>
                         <div class="logout-down">
                             <a href="">Logout</a>
                         </div>
@@ -114,11 +116,65 @@
 
 <section class="row pictures">
     <div class="container">
+        <%
+
+            String getid = (String)request.getParameter("id");
+            int igetid = Integer.parseInt(getid);
+            int logged = user.getId();
+            if(igetid == user.getId()){
+            String cover = user.getCover();
+            String display = user.getDisplay();
+            if(!cover.isEmpty() && cover!=null){
+                %>
+        <div class="col-md-12" style="background-image: url('<%=cover%>'); margin-top: 30px; padding: 30px; padding-bottom: 100px">
+
+            <img src="<%=display%>" style="height:300px; margin: 0 auto; margin-top: 50px" alt="{{$user->first_name}}" class="img-responsive profile">
+
+        </div>
+                <%
+            }else{
+                %>
         <div class="col-md-12" style="background-image: url('../src/resources/theme1.jpeg'); margin-top: 30px; padding: 30px; padding-bottom: 100px">
 
             <img src="../src/resources/user_color.png" style="height:300px; margin: 0 auto; margin-top: 50px" alt="{{$user->first_name}}" class="img-responsive profile">
 
         </div>
+                <%
+            }
+                    }else{
+                %>
+
+                    <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                                       url = "jdbc:mysql://localhost/tweeysg"
+                                       user = "root"  password = "root"/>
+
+                    <sql:query dataSource = "${snapshot}" var = "result">
+                        SELECT * from user WHERE id=<%=igetid%>;
+                    </sql:query>
+
+                    <c:forEach var = "row" items = "${result.rows}">
+                        <h3><c:out value = "${row.first_name}"/> <c:out value = "${row.last_name}"/></h3>
+                        <h4>Contact me at: <c:out value = "${row.email}"/></h4>
+                        <c:if test = "${not empty row.cover }">
+                            <div class="col-md-12" style="background-image: url('<c:out value = "${row.cover}"/>'); margin-top: 30px; padding: 30px; padding-bottom: 100px">
+
+                                <img src="<c:out value = "${row.display}"/>" style="height:300px; margin: 0 auto; margin-top: 50px" alt="{{$user->first_name}}" class="img-responsive profile">
+
+                            </div>
+                        </c:if>
+
+                        <c:if test = "${empty row.cover }">
+                            <div class="col-md-12" style="background-image: url('../src/resources/theme1.jpeg'); margin-top: 30px; padding: 30px; padding-bottom: 100px">
+
+                                <img src="../src/resources/user_color.png" style="height:300px; margin: 0 auto; margin-top: 50px" alt="{{$user->first_name}}" class="img-responsive profile">
+
+                            </div>
+                        </c:if>
+
+                    </c:forEach>
+                <%
+            }
+        %>
     </div>
 </section>
 
@@ -126,8 +182,7 @@
     <div class="container">
         <div class="col-md-12" style="background-color: #fff">
             <%
-                String getid = (String)request.getParameter("id");
-                int igetid = Integer.parseInt(getid);
+
 
                 if(igetid == user.getId()) {
             %>
@@ -140,7 +195,7 @@
                 </div>
                 <div class="form-group">
                     <label for="first_name">First Name</label>
-                    <input type="text" name="first_name" class="form-control" value="<%=user.getLast_name()%>" id="last_name">
+                    <input type="text" name="last_name" class="form-control" value="<%=user.getLast_name()%>" id="last_name">
                 </div>
                 <div class="form-group">
                     <label for="image">Image (only .jpg)</label>
@@ -157,19 +212,30 @@
                 }else{
                     %>
 
-            <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
-                               url = "jdbc:mysql://localhost/tweeysg"
-                               user = "root"  password = "root"/>
+                    <c:forEach var = "row" items = "${result.rows}">
+                        <h3><c:out value = "${row.first_name}"/> <c:out value = "${row.last_name}"/></h3>
+                        <h4>Contact me at: <c:out value = "${row.email}"/></h4>
+                    </c:forEach>
 
-            <sql:query dataSource = "${snapshot}" var = "result">
-                SELECT * from user WHERE id=<%=igetid%>;
-            </sql:query>
-
-            <c:forEach var = "row" items = "${result.rows}">
-                <h3><c:out value = "${row.first_name}"/> <c:out value = "${row.last_name}"/></h3>
-                <h4>Contact me at: <c:out value = "${row.email}"/></h4>
-            </c:forEach>
-
+                    <sql:query dataSource = "${snapshot}" var = "request">
+                        SELECT * from friendrequests WHERE requestTo=<%=igetid%> AND requestBy=<%=logged%>;
+                    </sql:query>
+                    <c:set var = "count" scope = "page" value = "${0}"/>
+                    <c:forEach var = "row" items = "${request.rows}">
+                        <c:set var="count" value="${count + 1}" scope="page"/>
+                        <c:if test="${row.status == 'pending'}">
+                            <button type="submit" class="btn btn-warning">Friend Request Send !!</button>
+                        </c:if>
+                        <c:if test="${row.status == 'accepted'}">
+                            <button type="submit" class="btn btn-info">You are buddies !!</button>
+                        </c:if>
+                    </c:forEach>
+                    <c:if test="${count == 0}">
+                        <form action="friend" method="post">
+                            <input type="hidden" name="to" value="<%=igetid%>">
+                            <button type="submit" class="btn btn-primary">Send Friend Request</button>
+                        </form>
+                    </c:if>
                     <%
                 }
             %>
