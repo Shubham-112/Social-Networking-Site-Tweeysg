@@ -101,7 +101,7 @@ public class Post extends HttpServlet {
                         file = new File( absoluteDiskPath + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1)) ;
                         path = relativeStore + "\\" + user_id + "\\" + time + "-" + fileName.substring(fileName.lastIndexOf("\\")+1);
                     }
-                    item.write( file ) ;
+                    item.write( file );
                     pw.println("Uploaded Filename: <>" + fileName);
                 }
             }

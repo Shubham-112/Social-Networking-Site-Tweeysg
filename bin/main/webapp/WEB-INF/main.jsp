@@ -66,7 +66,7 @@
 					</div>
 
 					<div class="text-center w-full">
-						<a class="txt1" href="register.jsp">
+						<a class="txt1" href="register">
 							Create new account
 							<i class="fa fa-long-arrow-right"></i>						
 						</a>

@@ -2,6 +2,7 @@
 <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 
 <%@ page import="Beans.UserBean" %>
 <%@ page import="java.util.List" %>
@@ -38,6 +39,9 @@
 
     </head>
     <body>
+    <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                       url = "jdbc:mysql://localhost/tweeysg"
+                       user = "root"  password = "root"/>
         <header>
             <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
@@ -85,19 +89,25 @@
                                 </a>
                             </li>
                             <li><a href="{{route('account')}}"><img height="28px" width="28px" src="../src/resources/settings_32.png" alt=""></a></li>
-                            <li id="notifis">
-                                <a href="{{route('notifications')}}"><img src="../src/resources/notifications.png" height="28px" width="28px" alt=""></a>
-<!--
-                                @if(isset($notifs))
-                                    <div id="notifications">
-                                        <h2>Notifications</h2>
-                                        @foreach($notifs as $notif)
-                                                <p>{{$notif->body}}</p>
-                                        @endforeach
-                                    </div>
-                                @endif
--->
-                            </li>
+
+                            <c:set var = "count" scope = "page" value = "${0}"/>
+                            <sql:query dataSource = "${snapshot}" var = "request">
+                                SELECT * from friendrequests WHERE requestTo=<%=user.getId()%> AND status="pending";
+                            </sql:query>
+                            <c:forEach var = "row" items = "${request.rows}">
+                                <c:set var="count" value="${count + 1}" scope="page"/>
+                            </c:forEach>
+
+                            <c:if test="${count>0}">
+                                <li id="notifis" style="background-color: orange">
+                                    <a href="notifications"><img src="../src/resources/notifications.png" height="28px" width="28px" alt=""><c:out value="${count}"/></a>
+                                </li>
+                            </c:if>
+                            <c:if test="${count==0}">
+                                <li id="notifis">
+                                    <a href="notifications"><img src="../src/resources/notifications.png" height="28px" width="28px" alt=""></a>
+                                </li>
+                            </c:if>
                             <li id="logout-li">
                                 <a href="logout"><img height="28px" width="28px" src="../src/resources/logout_32.png" alt=""></a>
                                 <div class="logout-down">
@@ -226,136 +236,43 @@
                 </c:forEach>
             </section>
 
-
-
-            <%--<section class=" posts">--%>
-
-                <%--@foreach($posts as $post)--%>
-                    <%--<?php $post_count = 0; ?>--%>
-                    <%--<article class="post" data-postid="{{$post->id}}">--%>
-                        <%--<div class="posted-head">--%>
-                            <%--<div class="posted-img">--%>
-                                <%--@if(Storage::disk('local')->has($post->user['first_name'].'-'.Auth::user()->id.'.jpg'))--%>
-                                    <%--<img height="44px" width="44px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">--%>
-                                <%--@else--%>
-                                    <%--<img height="44px" width="44px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">--%>
-                                <%--@endif--%>
-                            <%--</div>--%>
-                            <%--<a href="{{route('user.profile', ['user'=>$post->user['id']])}}">{{$post->user['first_name']}}</a>--%>
-                            <%--<div class="clearfix"></div>--%>
-                            <%--<p>{{$post->created_at->format('F d Y - G:i')}}</p>--%>
-                        <%--</div>--%>
-                        <%--<p class="posted-body">{{ $post->body }}</p>--%>
-<%--<!----%>
-                        <%--@if(Storage::disk('local')->has('post-'.$post->id.'-image.jpg'))--%>
-                            <%--<a class="posted-post-image" data-lightbox="image-{{$post->id}}" data-title="{{$post->body}}" href="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" alt="" class="img-responsive"><div class="contain"><img--%>
-                                            <%--src="{{route('post.image', ['filename'=>'post-'.$post->id.'-image.jpg'])}}" class="post-image img-responsive" alt=""></div></a>--%>
-                        <%--@endif--%>
-<%---->--%>
-                        <%--<hr>--%>
-                        <%--<div class="post-react">--%>
-<%--<!----%>
-                            <%--<p>--%>
-                                <%--<?php $id = Auth::user()->id; ?>--%>
-                                <%--<span>{{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'You': '' : ''}}</span>--%>
-                                <%--<span>--%>
-                                            <%--@if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()>0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? true: false: false)--%>
-                                        <%--and--%>
-                                    <%--@endif--%>
-                                        <%--</span>--%>
-                                <%--<span>--%>
-                                    <%--<span>--%>
-                                                <%--@if((\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count())>0)--%>
-                                                    <%--{{\App\Like::where('post_id', $post->id)->where('user_id','!=', $id)->count()}}--%>
-                                                <%--@endif--%>
-                                    <%--</span>--%>
-                                    <%--<span>--%>
-                                                <%--@if(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==1)--%>
-                                                    <%--person like this--%>
-                                                <%--@elseif(\App\Like::where('post_id', $post->id)->count()>1)--%>
-                                                    <%--other people like this--%>
-                                                <%--@elseif(\App\Like::where('post_id', $post->id)->where('user_id', '!=', $id)->count()==0 && Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1 : false)--%>
-                                                    <%--like this--%>
-                                                <%--@endif--%>
-                                            <%--</span>--%>
-                                <%--</span>--%>
-                            <%--</p>--%>
-<%---->--%>
-                        <%--</div>--%>
-                        <%--<div class="interaction">--%>
-<%--<!----%>
-                            <%--<a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==1? 'liked' : 'normal' : 'normal'}}"><img--%>
-                                        <%--src="{{URL::to('src/resources/if_like-01_186399.png')}}" alt=""> Like</a> |--%>
-                            <%--<a href="#" class="btn like {{Auth::user()->likes()->where('post_id', $post->id)->first() ? Auth::user()->likes()->where('post_id', $post->id)->first()->like==0? 'disliked': 'normal' : 'normal' }}"><img--%>
-                                        <%--src="{{URL::to('src/resources/if_dislike-01_186406 .png')}}" alt=""> Dislike</a>--%>
-                            <%--@if(Auth::user() == $post->user)--%>
-                                <%--|--%>
-                                <%--<a href="#" class="btn edit normal"><img src="{{URL::to('src/resources/if_edit_2199097.png')}}" alt=""> Edit</a> |--%>
-                                <%--<a href="{{route('post.delete', ['post_id' => $post->id])}}" class=" delete btn normal"><img--%>
-                                            <%--src="{{URL::to('src/resources/if_Bin_2202256 .png')}}" alt=""> Delete</a>--%>
-                            <%--@endif--%>
-<%---->--%>
-                        <%--</div>--%>
-                        <%--<div class="add-comment">--%>
-                            <%--<form method="post" action="{{route('comment.add')}}">--%>
-                                <%--<div class="comment-field">--%>
-                                    <%--<textarea name="comment" id="comment" cols="60" rows="3" placeholder="Type your comment here..."></textarea>--%>
-                                <%--</div>--%>
-                                <%--<button type="submit" class="btn btn-primary">Comment</button>--%>
-                                <%--<input type="hidden" value="{{$post->id}}" name="post_id">--%>
-                                <%--<input type="hidden" value="{{Session::token()}}" name="_token">--%>
-                            <%--</form>--%>
-                        <%--</div>--%>
-                        <%--<div class="get-comments">--%>
-                            <%--<p>Comments</p>--%>
-                            <%--@foreach($comments as $comment)--%>
-                                <%--@if($comment->post_id == $post->id)--%>
-                                    <%--<div class="comment">--%>
-                                        <%--<div class="posted-comment-img">--%>
-                                            <%--@if(Storage::disk('local')->has($comment->user['first_name'].'-'.Auth::user()->id.'.jpg'))--%>
-                                                <%--<img height="38px" width="38px" src="{{route('account.image', ['filename'=>Auth::user()->first_name.'-'.Auth::user()->id.'.jpg'])}}" alt="{{Auth::user()->first_name}}">--%>
-                                            <%--@else--%>
-                                                <%--<img height="38px" width="38px" src="{{route('account.image', ['filename'=>'default-user.png'])}}" alt="{{Auth::user()->first_name}}">--%>
-                                            <%--@endif--%>
-                                        <%--</div>--%>
-                                        <%--<h3>{{$comment->user['first_name']}}</h3>--%>
-                                        <%--<p>{{$comment->body}}</p>--%>
-                                    <%--</div>--%>
-                                <%--@endif--%>
-                            <%--@endforeach--%>
-                        <%--</div>--%>
-                    <%--</article>--%>
-                <%--@endforeach--%>
-            <%--</section>--%>
         </div>
         <div class="col-md-2"></div>
         <div id="online">
             <div class="col-md-3">
                 <h2>BUDDIES</h2>
                 <div class="users">
-                    <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
-                                       url = "jdbc:mysql://localhost/tweeysg"
-                                       user = "root"  password = "root"/>
+                    <%
+                        request.setAttribute("user_id_jstl", user.getId());
+                    %>
                     <c:set var = "count" scope = "page" value = "${0}"/>
                     <sql:query dataSource = "${snapshot}" var = "request">
-                        SELECT * from friendrequests WHERE AND requestBy=<%=user.getId()%>;
+                        SELECT * from friendrequests WHERE requestBy=<%=user.getId()%> OR requestTo=<%=user.getId()%>;
                     </sql:query>
                     <c:forEach var = "row" items = "${request.rows}">
                         <c:set var="count" value="${count + 1}" scope="page"/>
                         <c:if test="${row.status == 'accepted'}">
-                            <sql:query dataSource = "${snapshot}" var = "result">
-                                SELECT * from user WHERE id=${row.requestTo};
-                            </sql:query>
-                            <c:forEach var = "us" items = "${result.rows}">
-                                <a href="profile/${row.requestTo}" class="btn">${us.first_name}</a>
-                            </c:forEach>
+
+                            <c:if test="${row.requestBy==user_id_jstl}">
+                                <sql:query dataSource = "${snapshot}" var = "result">
+                                    SELECT * from user WHERE id=${row.requestTo};
+                                </sql:query>
+                                <c:forEach var = "us" items = "${result.rows}">
+                                    <a href="/profile?id=${row.requestTo}" class="btn">${us.first_name} ${us.last_name}</a>
+                                </c:forEach>
+                            </c:if>
+
+                            <c:if test="${row.requestTo==user_id_jstl}">
+                                <sql:query dataSource = "${snapshot}" var = "result">
+                                    SELECT * from user WHERE id=${row.requestBy};
+                                </sql:query>
+                                <c:forEach var = "us" items = "${result.rows}">
+                                    <a href="/profile?id=${row.requestBy}" class="btn">${us.first_name} ${us.last_name}</a>
+                                </c:forEach>
+                            </c:if>
+
                         </c:if>
                     </c:forEach>
-                    @foreach($users as $user)
-                        @if(Auth::user() != $user)
-                            <a href="{{route('user.profile', ['user'=>$user->id])}}" class="btn">{{$user->first_name}}</a>
-                        @endif
-                    @endforeach
                 </div>
             </div>
         </div>
@@ -383,11 +300,6 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
-    <script>
-        var token = '{{ Session::token() }}';
-        var urlEdit = '{{route('edit')}}';
-        var urlLike = '{{route('post.like')}}';
-    </script>
 
         <script
                 src="https://code.jquery.com/jquery-3.2.1.min.js"

@@ -108,19 +108,75 @@ public class UserDAO {
     }
 
     public static boolean sendRequest(int reqTo, int user){
+        Connection conn;
         try{
             conn = ConnectionManager.getConnection();
             String query = "SELECT * FROM friendrequests WHERE requestBy=" + user + " AND requestTo=" + reqTo + "";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(!rs.next()){
-                PreparedStatement insstmt = conn.prepareStatement("INSERT INTO friendrequests(requestBy, requestTo, status) VALUE(?,?,?)");
-                insstmt.setInt(user, 1);
-                insstmt.setInt(reqTo, 2);
-                insstmt.setString(3,"pending");
+                Connection newC = ConnectionManager.getConnection();
+                PreparedStatement insstmt = newC.prepareStatement("INSERT INTO friendrequests(requestBy, requestTo) VALUE(?,?)");
+                insstmt.setInt(1, user);
+                insstmt.setInt(2, reqTo);
                 int t = insstmt.executeUpdate();
                 if(t>0){
                     return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static boolean acceptRequest(int reqBy, int user){
+        try{
+            conn = ConnectionManager.getConnection();
+            String query = "SELECT * FROM friendrequests WHERE requestBy=" + reqBy + " AND requestTo=" + user + "";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                Connection newC = ConnectionManager.getConnection();
+                PreparedStatement insstmt = newC.prepareStatement("UPDATE friendrequests SET status='accepted' WHERE requestBy=? AND requestTo=?");
+                insstmt.setInt(1, reqBy);
+                insstmt.setInt(2, user);
+                int t = insstmt.executeUpdate();
+                if(t>0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                return false;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+
+    public static boolean declineRequest(int reqBy, int user){
+        try{
+            conn = ConnectionManager.getConnection();
+            String query = "SELECT * FROM friendrequests WHERE requestBy=" + reqBy + " AND requestTo=" + user + "";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            if(rs.next()){
+                Connection newC = ConnectionManager.getConnection();
+                PreparedStatement insstmt = newC.prepareStatement("UPDATE friendrequests SET status='rejected' WHERE requestBy=? AND requestTo=?");
+                insstmt.setInt(1, reqBy);
+                insstmt.setInt(2, user);
+                int t = insstmt.executeUpdate();
+                if(t>0){
+                    return true;
+                }else{
+                    return false;
                 }
             }else{
                 return false;
