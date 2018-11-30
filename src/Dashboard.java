@@ -2,6 +2,7 @@ import Beans.PostBean;
 import Beans.UserBean;
 import DAOs.PostDAO;
 import DAOs.UserDAO;
+import Utilities.LoginSecurity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,6 +20,10 @@ public class Dashboard extends HttpServlet {
 
         PrintWriter pw = response.getWriter();
         pw.println("in post dashboard");
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
         HttpSession session = request.getSession();
         String email = (String) session.getAttribute("user_email");

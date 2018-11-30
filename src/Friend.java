@@ -1,6 +1,7 @@
 import Beans.UserBean;
 import Connection.ConnectionManager;
 import DAOs.UserDAO;
+import Utilities.LoginSecurity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,10 @@ import java.sql.*;
 @WebServlet(name = "Friend", urlPatterns = {"/friend"})
 public class Friend extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
         PrintWriter pw = response.getWriter();
         HttpSession session = request.getSession();
@@ -43,6 +48,6 @@ public class Friend extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 }

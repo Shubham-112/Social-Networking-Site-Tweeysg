@@ -2,6 +2,7 @@ import Beans.PostBean;
 import Beans.UserBean;
 import DAOs.PostDAO;
 import DAOs.UserDAO;
+import Utilities.LoginSecurity;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -32,6 +33,10 @@ public class Profile extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
 
         PrintWriter pw = response.getWriter();
@@ -141,6 +146,10 @@ public class Profile extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
         PrintWriter pw = response.getWriter();
         String host = request.getHeader("Host");

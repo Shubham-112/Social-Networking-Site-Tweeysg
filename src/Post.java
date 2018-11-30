@@ -2,6 +2,7 @@ import Beans.PostBean;
 import Beans.UserBean;
 import Connection.ConnectionManager;
 import DAOs.PostDAO;
+import Utilities.LoginSecurity;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -41,6 +42,10 @@ public class Post extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
         PrintWriter pw = response.getWriter();
 
@@ -128,6 +133,6 @@ public class Post extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request, response);
     }
 }

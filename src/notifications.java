@@ -1,6 +1,7 @@
 import Beans.UserBean;
 import Connection.ConnectionManager;
 import DAOs.UserDAO;
+import Utilities.LoginSecurity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +16,10 @@ import java.sql.*;
 @WebServlet(name = "notifications", urlPatterns = {"/notifications"})
 public class notifications extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
 
         HttpSession session = request.getSession();
         PrintWriter pw = response.getWriter();
@@ -50,6 +55,9 @@ public class notifications extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(!LoginSecurity.check(request, response)){
+            request.getRequestDispatcher("/login").forward(request, response);
+        }
         request.getRequestDispatcher("WEB-INF/notifications.jsp").forward(request, response);
     }
 }
